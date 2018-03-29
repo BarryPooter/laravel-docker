@@ -12,6 +12,9 @@ services:
       - "DB_PORT=3306"
       - "DB_HOST=database"
 
+    extra_hosts:
+      - "example:192.168.10.10"
+
   web:
     build:
       context: ./
