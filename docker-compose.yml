@@ -4,9 +4,9 @@ services:
     build:
       context: ./
       dockerfile: app.dockerfile
-    working_dir: /var/www/snacksmurf
+    working_dir: /var/www/application
     volumes:
-      - ./:/var/www/snacksmurf
+      - ./:/var/www/application
 
     environment:
       - "DB_PORT=3306"
@@ -19,7 +19,7 @@ services:
     build:
       context: ./
       dockerfile: web.dockerfile
-    working_dir: /var/www/snacksmurf
+    working_dir: /var/www/application
     volumes_from:
       - app
     ports:
